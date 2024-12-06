@@ -16,12 +16,12 @@
  *
  */
 
-interface TableProps<T> {
-  rows: T[];
-  renderRow: (row: T) => React.ReactNode;
-}
+type TableProps = {
+  rows: any[];
+  renderRow: (row: any) => React.ReactNode;
+};
 
-export const Table = <T,>(props: TableProps<T>) => {
+export const Table = (props: TableProps) => {
   return (
     <table>
       <tbody>
@@ -40,10 +40,10 @@ const data = [
   },
 ];
 
-export const Parent = () => {
+export default function Parent() {
   return (
     <div>
       <Table rows={data} renderRow={(row) => <td>{row.name}</td>} />
     </div>
   );
-};
+}

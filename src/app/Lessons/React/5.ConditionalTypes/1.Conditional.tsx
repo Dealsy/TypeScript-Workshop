@@ -30,19 +30,16 @@
 
 type UserType = "student" | "employee";
 
-export type UserData<T extends UserType> = T extends "student"
-  ? {
-      type: T;
-      university: string;
-      major: string;
-    }
-  : {
-      type: T;
-      company: string;
-      position: string;
-    };
+// This type needs to be improved to use conditional types
+type UserData = {
+  type: UserType;
+  university?: string;
+  major?: string;
+  company?: string;
+  position?: string;
+};
 
-const UserInfoComponent = <T extends UserType>(props: UserData<T>) => {
+const UserInfoComponent = (props: UserData) => {
   return (
     <div>
       {props.type === "student" ? (

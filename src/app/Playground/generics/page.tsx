@@ -3,7 +3,7 @@ interface TableProps<T> {
   renderRow: (row: T) => React.ReactNode;
 }
 
-export const Table = <T,>(props: TableProps<T>) => {
+const Table = <T,>(props: TableProps<T>) => {
   return (
     <table>
       <tbody>
@@ -29,10 +29,10 @@ export default function Parent() {
       <Table
         rows={data}
         renderRow={(row) => (
-          <>
+          <div key={row.id}>
             <td>{row.name}</td>
             <td>{row.email}</td>
-          </>
+          </div>
         )}
       />
     </div>

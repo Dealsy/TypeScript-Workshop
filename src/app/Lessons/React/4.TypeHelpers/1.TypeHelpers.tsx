@@ -17,15 +17,17 @@
 
 import { ChangeEventHandler } from "react";
 
-type AllOrNothing<T> = T | ToUndefinedObject<T>;
-type ToUndefinedObject<T> = Partial<Record<keyof T, undefined>>;
-
-type InputProps = AllOrNothing<{
-  value: string;
-  onChange: ChangeEventHandler;
-}> & {
-  label: string;
-};
+type InputProps =
+  | {
+      value: string;
+      onChange: ChangeEventHandler;
+      label: string;
+    }
+  | {
+      value?: undefined;
+      onChange?: undefined;
+      label: string;
+    };
 
 export const Input = ({ label, ...props }: InputProps) => {
   return (
