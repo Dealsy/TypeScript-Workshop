@@ -98,10 +98,6 @@ Lessons/
 - [Discriminated Unions](https://www.totaltypescript.com/discriminated-unions-are-a-devs-best-friend)
 - [Type Manipulation](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html)
 
-### Community Resources
-
-- [TypeScript Weekly Newsletter](https://typescript-weekly.com/)
-- [TypeScript Community Discord](https://discord.com/invite/typescript)
 
 ## 🤝 Contributing
 
